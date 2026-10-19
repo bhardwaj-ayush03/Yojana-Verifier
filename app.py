@@ -27,6 +27,12 @@ INDIAN_STATES_AND_UTS = [
 
 st.title("🎓 Yojana Verifier")
 st.caption("Scholarship guidance grounded in official sources — not official approval.")
+if settings.yojana_mock_mode:
+    st.warning("DEMO MODE: results come from fixed sample data, so different profiles may show the same schemes. TinyFish is not called. Set YOJANA_MOCK_MODE=false for live discovery.")
+elif not settings.tinyfish_api_key or not settings.effective_llm_key:
+    missing = [name for name, present in (("TINYFISH_API_KEY", settings.tinyfish_api_key),
+                                           ("GROQ_API_KEY or LLM_API_KEY", settings.effective_llm_key)) if not present]
+    st.error("Live mode cannot search yet. Add " + " and ".join(missing) + " to your deployment's root-level secrets, then restart the app.")
 
 with st.sidebar:
     with st.form("student_profile"):
@@ -68,8 +74,8 @@ if run:
         queries = build_discovery_queries(profile)
         if settings.yojana_mock_mode:
             schemes = discover_schemes(queries[0], mock_mode=True)
-        elif not settings.tinyfish_api_key:
-            st.error("Set TINYFISH_API_KEY in .env before using live mode.")
+        elif not settings.tinyfish_api_key or not settings.effective_llm_key:
+            st.error("Live mode needs both TinyFish and Groq API keys. Set them in .env locally or root-level Streamlit Cloud secrets, then restart the app.")
             schemes = []
         else:
             client = TinyFishClient(settings.tinyfish_api_key, settings.tinyfish_search_url,

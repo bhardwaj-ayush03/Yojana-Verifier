@@ -1,5 +1,3 @@
-from functools import lru_cache
-
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -13,7 +11,8 @@ class Settings(BaseSettings):
     llm_model: str | None = None
     groq_api_key: str | None = None
     groq_model: str = "openai/gpt-oss-120b"
-    yojana_mock_mode: bool = True
+    # Live discovery is the default. Seeded results require an explicit opt-in.
+    yojana_mock_mode: bool = False
     yojana_max_agent_runs: int = Field(default=3, ge=0)
     yojana_cache_ttl_hours: int = Field(default=24, ge=1)
 
@@ -28,6 +27,5 @@ class Settings(BaseSettings):
         return self.groq_model if self.groq_api_key else (self.llm_model or self.groq_model)
 
 
-@lru_cache
 def get_settings() -> Settings:
     return Settings()

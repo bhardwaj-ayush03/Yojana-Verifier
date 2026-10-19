@@ -52,7 +52,9 @@ The other endpoint and model settings are documented in `.env.example`. Do not c
 | Live | `YOJANA_MOCK_MODE=false` | Searches and fetches official sources with TinyFish, then extracts details with Groq. Requires both keys and network access. |
 | Mock | `YOJANA_MOCK_MODE=true` | Uses the local illustrative entries in `data/seed_sources.json`. No live discovery occurs; seeded dates and amounts must not be presented as current facts. |
 
-The example `.env.example` starts in mock mode so the app can be launched without credentials. Switch to live mode for a real-source demonstration.
+Live mode is the default. The example `.env.example` also starts in live mode; missing keys produce a visible configuration error, not sample results. Set `YOJANA_MOCK_MODE=true` only when you intentionally want the fixed, offline demo data.
+
+For Streamlit Community Cloud, put `TINYFISH_API_KEY`, `GROQ_API_KEY`, and `YOJANA_MOCK_MODE = false` at the root of **App settings → Secrets** (not under a TOML section). Save and restart the app. Check that the footer says **LIVE adapters enabled** before showing the judges; **MOCK / curated seed data** means no TinyFish call was made. Do not commit keys to GitHub.
 
 ## Suggested demo
 
