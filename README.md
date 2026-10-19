@@ -1,5 +1,7 @@
 # Yojana Verifier
 
+**Live demo:** [yojana-verifier.streamlit.app](https://yojana-verifier.streamlit.app/) · **Source code:** [GitHub](https://github.com/bhardwaj-ayush03/Yojana-Verifier)
+
 Yojana Verifier helps Indian students discover scholarships relevant to their profile and inspect the official evidence behind an eligibility assessment. A student enters their domicile, category, course, income, marks, and other details; the app searches official sources, extracts scheme information, checks rules against the profile, and links back to the source. It is a decision-support demo, not a scholarship application portal or an approval decision.
 
 ## What the app does
