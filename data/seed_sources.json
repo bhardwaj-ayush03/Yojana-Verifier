@@ -1,0 +1,32 @@
+[
+  {
+    "id": "central-sector-scholarship",
+    "name": "PM-USP Central Sector Scheme of Scholarship for College and University Students",
+    "official_url": "https://scholarships.gov.in/",
+    "provider": "Ministry of Education",
+    "academic_year": "2026-27",
+    "award_amount": 20000,
+    "deadline": "2026-10-31",
+    "source_urls": ["https://scholarships.gov.in/"]
+  },
+  {
+    "id": "post-matric-sc-scholarship",
+    "name": "Post-Matric Scholarship for SC Students",
+    "official_url": "https://scholarships.gov.in/",
+    "provider": "Ministry of Social Justice and Empowerment",
+    "academic_year": "2025-26",
+    "award_amount": 35000,
+    "deadline": "2026-02-15",
+    "source_urls": ["https://scholarships.gov.in/"]
+  },
+  {
+    "id": "minority-post-matric",
+    "name": "Post Matric Scholarship Scheme for Minorities",
+    "official_url": "https://scholarships.gov.in/",
+    "provider": "Ministry of Minority Affairs",
+    "academic_year": "2025-26",
+    "award_amount": 30000,
+    "deadline": "2026-01-31",
+    "source_urls": ["https://scholarships.gov.in/"]
+  }
+]

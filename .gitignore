@@ -1,2 +1,8 @@
-.venv/
 .env
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+data/cache/*
+!data/cache/.gitkeep
+.streamlit/

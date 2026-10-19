@@ -1,0 +1,21 @@
+[project]
+name = "yojana-verifier"
+version = "0.1.0"
+description = "Evidence-backed scholarship eligibility guidance for Indian students"
+requires-python = ">=3.11"
+dependencies = [
+  "groq>=0.31.0",
+  "httpx>=0.28.1",
+  "pydantic>=2.11.0",
+  "pydantic-settings>=2.10.0",
+  "pypdf>=6.0.0",
+  "python-dotenv>=1.1.0",
+  "streamlit>=1.49.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
